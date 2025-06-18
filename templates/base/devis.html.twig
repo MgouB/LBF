@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ parent() }} Devis
+{% endblock %}
+
+{% block body %}
+    <section class="container my-5">
+        <h1 class="text-center text-success mb-4">Demandez votre devis gratuit</h1>
+        <p class="text-center mb-5">Chez LBF Paysage, nous vous proposons un devis rapide, professionnel et sans engagement. Remplissez le formulaire ci-dessous :</p>
+
+        <form action="#" method="post" class="mx-auto px-4 py-4 rounded" style="max-width: 600px; background-color: #f9f9f9; border: 1px solid #e0e0e0;">
+            <div class="mb-3">
+                <label for="name" class="form-label">Nom / Prénom *</label>
+                <input type="text" id="name" name="name" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email *</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="phone" class="form-label">Téléphone *</label>
+                <input type="tel" id="phone" name="phone" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="service" class="form-label">Type de prestation souhaitée *</label>
+                <select id="service" name="service" class="form-select" required>
+                    <option value="">-- Sélectionnez --</option>
+                    <option value="elagage">Éspace vert</option>
+                    <option value="abattage">Abattage</option>
+                    <option value="entretien">Elagage</option>
+                    <option value="autre">Autre</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="message" class="form-label">Votre message / précisions</label>
+                <textarea id="message" name="message" rows="5" class="form-control"></textarea>
+            </div>
+
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-success px-5 py-2 fw-bold">Envoyer ma demande</button>
+            </div>
+        </form>
+    </section>
+{% endblock %}
