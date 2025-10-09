@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+{% block title %}Nos services - LBF Paysage{% endblock %}
+
+{% block body %}
+
+<section class="hero">
+  <h1>Nos Services</h1>
+  <h2>Des prestations adaptées à vos besoins</h2>
+  <div class="buttons">
+    <a href="#espace-vert">Espace vert</a>
+    <a href="#elagage">Élagage</a>
+    <a href="#abattage">Abattage</a>
+  </div>
+</section>
+
+
+<section id="espace-vert" class="section-why text-center">
+  <h2 class="mb-4">Espace Vert</h2>
+  <p class="mb-5">Entretien complet de vos espaces verts : pelouses, haies, massifs…</p>
+  <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+    <div class="card-why">
+      <h4>Tonte & Bordures</h4>
+      <ul>
+        <li>Tonte régulière</li>
+        <li>Finitions précises</li>
+        <li>Évacuation des déchets verts</li>
+      </ul>
+    </div>
+    <div class="card-why light">
+      <h4>Plantations & Massifs</h4>
+      <ul>
+        <li>Fleurs & arbustes</li>
+        <li>Paillage décoratif</li>
+        <li>Entretien saisonnier</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<section id="elagage" class="section-engagements text-center">
+  <h2 class="mb-4">Élagage</h2>
+  <p class="mb-5">Préserver vos arbres avec des tailles respectueuses et sécurisées.</p>
+  <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+    <div class="card-engagement dark">
+      <h4>Taille douce</h4>
+      <p>Respect de la structure naturelle de l’arbre.</p>
+      <ul>
+        <li>Éclaircie de couronne</li>
+        <li>Équilibrage</li>
+      </ul>
+    </div>
+    <div class="card-engagement light">
+      <h4>Sécurisation</h4>
+      <p>Travaux proches des habitations et lignes électriques.</p>
+      <ul>
+        <li>Démontage par rétention</li>
+        <li>Évacuation sécurisée</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<section id="abattage" class="section-why text-center">
+  <h2 class="mb-4">Abattage</h2>
+  <p class="mb-5">Un abattage maîtrisé et sécurisé, avec remise en état du terrain.</p>
+  <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+    <div class="card-why">
+      <h4>Abattage dirigé</h4>
+      <ul>
+        <li>Analyse de trajectoire</li>
+        <li>Zone sécurisée</li>
+      </ul>
+    </div>
+    <div class="card-why light">
+      <h4>Dessouchage</h4>
+      <ul>
+        <li>Suppression de la souche</li>
+        <li>Préparation du terrain</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

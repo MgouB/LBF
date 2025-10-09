@@ -1,176 +1,177 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    {{ parent() }} Accueil
+	{{ parent() }}
+	Accueil
 {% endblock %}
 
 {% block body %}
-    <div class="hero">
-        <h1 class="fw-bold text-center">LBF PAYSAGE</h1>
-        <div class="buttons">
-            <a href="#">Découvrez nos services</a>
-            <a href="#">Parlons-en !</a>
-        </div>
-    </div>
+	<div class="hero">
+		<h1 class="fw-bold text-center">LBF PAYSAGE</h1>
+		<div class="buttons">
+			<a href="{{ path('app_services') }}">Découvrez nos services</a>
+			<a href="{{ path('app_propos') }}">Parlons-en !</a>
+		</div>
+	</div>
 
-    <section class="section-why py-5">
-        <div class="container text-center mb-4">
-            <h3 class="mb-3">Pourquoi faire appel à LBF paysage ?</h3>
-            <h2 class="fw-bold mb-3">Vos espaces verts n'ont pas encore le don d'auto-maintenance (on a vérifié) !</h2>
-            <p class="mb-4">
-                Et oui, votre jardin ne va pas se prendre en main seul. D’accord, on aime rire, mais avec le jardin, on est 100 % sérieux.
-                Vos plantes, arbres, arbustes et pelouses reçoivent toute l’attention qu’ils méritent.
-            </p>
-            <div class="buttons mb-5">
-                <a href="#" class="btn btn-primary me-2">Voyons ça de plus près !</a>
-                <a href="{{ path('app_devis') }}" class="btn btn-secondary">Demandez votre devis gratuit</a>
-            </div>
-        </div>
+	<section class="section-why py-5">
+		<div class="container text-center mb-4">
+			<h3 class="mb-3">Pourquoi faire appel à LBF paysage ?</h3>
+			<h2 class="fw-bold mb-3">Vos espaces verts n'ont pas encore le don d'auto-maintenance (on a vérifié) !</h2>
+			<p class="mb-4">
+				Et oui, votre jardin ne va pas se prendre en main seul. D’accord, on aime rire, mais avec le jardin, on est 100 % sérieux.
+								                Vos plantes, arbres, arbustes et pelouses reçoivent toute l’attention qu’ils méritent.
+			</p>
+			<div class="buttons mb-5">
+				<a href="#" class="btn btn-primary me-2">Voyons ça de plus près !</a>
+				<a href="{{ path('app_devis') }}" class="btn btn-secondary">Demandez votre devis gratuit</a>
+			</div>
+		</div>
 
-        <div class="container d-flex flex-wrap justify-content-center gap-4">
-            <div class="card-why">
-                <h4>Parce qu'on aime la nature... et les clients heureux.</h4>
-                <p>Chez LBF paysage nous proposons un service rapide, professionnel et sur mesure. Juste pour <strong>vous</strong>.</p>
-                <ul>
-                    <li>✅ Avance immédiate de crédit d'impôt</li>
-                    <li>✅ Interventions personnalisées selon vos besoins</li>
-                    <li>✅ Devis gratuit et sans engagement</li>
-                    <li>✅ Respect de l'environnement et des règles de sécurité</li>
-                    <li>✅ 12 ans d'expérience en élagage et entretien d'espaces verts</li>
-                    <li>✅ Diplômé du certificat de spécialisation arboriste élagueur</li>
-                </ul>
-                <a href="#" class="btn btn-secondary">Ça m'intéresse !</a>
-            </div>
+		<div class="container d-flex flex-wrap justify-content-center gap-4">
 
-            <div class="card-why light">
-                <h4>Parce qu'on aime la nature... et les clients heureux.</h4>
-                <p>Chez LBF paysage nous proposons un service rapide, professionnel et sur mesure. Juste pour <strong>vous</strong>.</p>
-                <ul>
-                    <li>✅ Avance immédiate de crédit d'impôt</li>
-                    <li>✅ Interventions personnalisées selon vos besoins</li>
-                    <li>✅ Devis gratuit et sans engagement</li>
-                    <li>✅ Respect de l'environnement et des règles de sécurité</li>
-                    <li>✅ 12 ans d'expérience en élagage et entretien d'espaces verts</li>
-                    <li>✅ Diplômé du certificat de spécialisation arboriste élagueur</li>
-                </ul>
-                <a href="#" class="btn btn-primary mt-3">Ça m'intéresse !</a>
-            </div>
+			<div class="card-engagement dark">
+				<h4>Parce qu'on aime la nature... et les clients heureux.</h4>
+				<p>Chez LBF paysage nous proposons un service rapide, professionnel et sur mesure. Juste pour
+					vous.</p>
+				<ul>
+					<li> Avance immédiate de crédit d'impôt</li>
+					<li> Interventions personnalisées selon vos besoins</li>
+					<li> Devis gratuit et sans engagement</li>
+					<li> Respect de l'environnement et des règles de sécurité</li>
+					<li> 12 ans d'expérience en élagage et entretien d'espaces verts</li>
+					<li> Diplômé du certificat de spécialisation arboriste élagueur</li>
+				</ul>
+				<a href="#" class="btn btn-secondary">Ça m'intéresse !</a>
+			</div>
 
-            <div class="card-engagement dark">
-                <h4>Parce qu'on aime la nature... et les clients heureux.</h4>
-                <p>Chez LBF paysage nous proposons un service rapide, professionnel et sur mesure. Juste pour <strong>vous</strong>.</p>
-                <ul>
-                    <li>✅ Avance immédiate de crédit d'impôt</li>
-                    <li>✅ Interventions personnalisées selon vos besoins</li>
-                    <li>✅ Devis gratuit et sans engagement</li>
-                    <li>✅ Respect de l'environnement et des règles de sécurité</li>
-                    <li>✅ 12 ans d'expérience en élagage et entretien d'espaces verts</li>
-                    <li>✅ Diplômé du certificat de spécialisation arboriste élagueur</li>
-                </ul>
-                <a href="#" class="btn btn-secondary">Ça m'intéresse !</a>
-            </div>
+			<div class="card-engagement light">
+				<h4>Nos engagements ? Pro, carré et efficace, toujours.</h4>
+				<p>Chez LBF paysage nous proposons un service rapide, professionnel et sur mesure. Juste pour
+					<strong>vous</strong>.</p>
+				<ul>
+					<li> Intervention rapide et ponctuelle</li>
+					<li> Travail sécurisé et maîtrisé</li>
+					<li>Respect de vos végétaux avec des techniques adaptées</li>
+					<li>Utilisation d’équipements modernes et performants</li>
+					<li> Conseils personnalisés selon vos besoins</li>
+					<li> Engagement écologique avec valorisation des déchets verts et respect de l’environnement</li>
+				</ul>
+				<a href="#" class="btn btn-primary mt-3">Ça m'intéresse !</a>
+			</div>
+		</div>
+	</section>
 
-            <div class="card-engagement light">
-                <h4>Nos engagements ? Pro, carré et efficace, toujours.</h4>
-                <p>Chez LBF paysage nous proposons un service rapide, professionnel et sur mesure. Juste pour <strong>vous</strong>.</p>
-                <ul>
-                    <li>✅ Avance immédiate de crédit d'impôt</li>
-                    <li>✅ Interventions personnalisées selon vos besoins</li>
-                    <li>✅ Devis gratuit et sans engagement</li>
-                    <li>✅ Respect de l'environnement et des règles de sécurité</li>
-                    <li>✅ 12 ans d'expérience en élagage et entretien d'espaces verts</li>
-                    <li>✅ Diplômé du certificat de spécialisation arboriste élagueur</li>
-                </ul>
-                <a href="#" class="btn btn-primary mt-3">Ça m'intéresse !</a>
-            </div>
-        </div>
-    </section>
 
-    <!-- SECTION À PROPOS + APPEL À L'ACTION -->
-    <section style="background-color: #f5eee4; padding: 4rem 1rem;">
-        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-start gap-5">
-            <div style="flex: 1;">
-                <blockquote class="blockquote border-start ps-3" style="border-left: 4px solid #ddd;">
-                    <p class="mb-3">Dans ce métier, ce qui me motive chaque jour, c’est de voir le sourire de nos clients en découvrant leur jardin transformé. Avec mon équipe, je m’engage à vous offrir un service de qualité, fiable et respectueux de l’environnement.</p>
-                    <footer class="blockquote-footer fw-semibold">Maxence Leboeuf</footer>
-                </blockquote>
-            </div>
+	<section style="background-color: #f5eee4; padding: 4rem 1rem;">
+		<div class="container d-flex flex-column flex-md-row justify-content-between align-items-start gap-5">
+			<div style="flex: 1;">
+				<blockquote class="blockquote border-start ps-3" style="border-left: 4px solid #ddd;">
+					<p class="mb-3">Dans ce métier, ce qui me motive chaque jour, c’est de voir le sourire de nos clients en découvrant leur jardin transformé. Avec mon équipe, je m’engage à vous offrir un service de qualité, fiable et respectueux de l’environnement.</p>
+					<footer class="blockquote-footer fw-semibold">Maxence Leboeuf</footer>
+				</blockquote>
+			</div>
 
-            <div style="flex: 1;">
-                <h6 class="text-muted">L’entreprise LBF paysage</h6>
-                <h2 class="fw-bold">À propos de nous</h2>
-                <p>
-                    LBF paysage accompagne les particuliers et professionnels de la métropole lilloise dans l’entretien de leurs <strong>jardins et espaces verts</strong>. Nous proposons des services complets <strong>d’élagage, abattage, et entretien d’espaces verts</strong>, adaptés à vos besoins et au rythme des saisons.
-                </p>
-                <p>
-                    Basés à Mouvaux, nous sommes fiers de contribuer à embellir les jardins de la région, en offrant un service de proximité fiable, flexible et de qualité.
-                </p>
-                <a href="#" class="btn btn-secondary mt-2">Prendre rendez-vous</a>
-            </div>
-        </div>
-    </section>
+			<div style="flex: 1;">
+				<h6 class="text-muted">L’entreprise LBF paysage</h6>
+				<h2 class="fw-bold">À propos de nous</h2>
+				<p>
+					LBF paysage accompagne les particuliers et professionnels de la métropole lilloise dans l’entretien de leurs
+					<strong>jardins et espaces verts</strong>. Nous proposons des services complets
+					<strong>d’élagage, abattage, et entretien d’espaces verts</strong>, adaptés à vos besoins et au rythme des saisons.
+				</p>
+				<p>
+					Basés à Mouvaux, nous sommes fiers de contribuer à embellir les jardins de la région, en offrant un service de proximité fiable, flexible et de qualité.
+				</p>
+				<a href="{{ path('app_devis') }}" class="btn btn-secondary mt-2">Prendre rendez-vous</a>
+			</div>
+		</div>
+	</section>
 
-    <section style="background-color: #3f5126; padding: 4rem 1rem; color: white; border-radius: 12px; margin-top: 0;">
-        <div class="container text-center">
-            <h2 class="fw-bold mb-3">On coupe, on taille, on embellit.<br>Qu'attendez-vous pour un devis gratuit ?</h2>
-            <p class="mb-3">
-                Vous rêvez d’un jardin impeccable, net et bien entretenu ? Élagage, taille de haies, tonte, débroussaillage…  
-                Que vous ayez une petite cour ou un grand parc, <strong>on s’occupe de tout</strong> !
-            </p>
-            <p class="mb-4">
-                Obtenez <strong>votre devis gratuit</strong> et <u>sans engagement</u>.
-            </p>
-            <div class="d-flex justify-content-center gap-3 flex-wrap">
-                <a href="{{ path('app_contact') }}" class="btn btn-outline-light px-4 py-2">Nous contacter</a>
-                <a href="{{ path('app_devis') }}" class="btn btn-light px-4 py-2">Devis gratuit →</a>
-            </div>
-        </div>
-    </section>
-    <footer style="background-color: #f5eee4; padding: 4rem 1rem;">
-        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-start gap-5">
+	<section style="background-color: #3f5126; padding: 4rem 1rem; color: white; border-radius: 12px; margin-top: 0;">
+		<div class="container text-center">
+			<h2 class="fw-bold mb-3">On coupe, on taille, on embellit.<br>Qu'attendez-vous pour un devis gratuit ?</h2>
+			<p class="mb-3">
+				Vous rêvez d’un jardin impeccable, net et bien entretenu ? Élagage, taille de haies, tonte, débroussaillage…  
+								                Que vous ayez une petite cour ou un grand parc,
+				<strong>on s’occupe de tout</strong>
+				!
+			</p>
+			<p class="mb-4">
+				Obtenez
+				<strong>votre devis gratuit</strong>
+				et
+				<u>sans engagement</u>.
+			</p>
+			<div class="d-flex justify-content-center gap-3 flex-wrap">
+				<a href="{{ path('app_devis') }}" class="btn btn-light px-4 py-2">Devis gratuit →</a>
+			</div>
+		</div>
+	</section>
+	<footer style="background-color: #f5eee4; padding: 4rem 1rem;">
+		<div class="container d-flex flex-column flex-md-row justify-content-between align-items-start gap-5">
 
-            <!-- Colonne adresse -->
-            <div style="flex: 1;">
-                <h5>LBF paysage</h5>
-                <iframe src="https://www.google.com/maps?q=21+rue+du+Docteur+Calmette+59420+Mouvaux&output=embed" width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                <p class="mt-2">21 rue du Docteur Calmette 59420 MOUVAUX<br>Du lundi au vendredi de 08h00 à 18h00</p>
-            </div>
 
-            <!-- Colonne navigation -->
-            <div style="flex: 1;">
-                <h5>Navigation</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#">À propos</a></li>
-                    <li><a href="#">Nos services</a></li>
-                    <li><a href="#">Entretien des espaces verts</a></li>
-                    <li><a href="#">Élagage</a></li>
-                    <li><a href="#">Abattage</a></li>
-                    <li><a href="#">Crédit d'impôt</a></li>
-                    <li><a href="{{ path('app_devis') }}">Devis gratuit</a></li>
-                </ul>
-            </div>
+			<div style="flex: 1;">
+				<h5>LBF paysage</h5>
+				<iframe src="https://www.google.com/maps?q=21+rue+du+Docteur+Calmette+59420+Mouvaux&output=embed" width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+				<p class="mt-2">21 rue du Docteur Calmette 59420 MOUVAUX<br>Du lundi au vendredi de 08h00 à 18h00</p>
+			</div>
 
-            <!-- Colonne réseaux sociaux -->
-            <div style="flex: 1;">
-                <h5>Suivez-nous sur les réseaux sociaux</h5>
-                <div class="d-flex gap-3 mt-2">
-                    <a href="#"><img src="chemin/vers/facebook-icon.png" alt="Facebook" width="32"></a>
-                    <a href="#"><img src="chemin/vers/youtube-icon.png" alt="YouTube" width="32"></a>
-                    <a href="#"><img src="chemin/vers/instagram-icon.png" alt="Instagram" width="32"></a>
-                </div>
-            </div>
 
-        </div>
+			<div style="flex: 1;">
+				<h5>Navigation</h5>
+				<ul class="list-unstyled">
+					<li>
+						<a href="{{ path('app_propos') }}">À propos</a>
+					</li>
+					<li>
+						<a href="#">Nos services</a>
+					</li>
+					<li>
+						<a href="#">Entretien des espaces verts</a>
+					</li>
+					<li>
+						<a href="#">Élagage</a>
+					</li>
+					<li>
+						<a href="#">Abattage</a>
+					</li>
+					<li>
+						<a href="#">Crédit d'impôt</a>
+					</li>
+					<li>
+						<a href="{{ path('app_devis') }}">Devis gratuit</a>
+					</li>
+				</ul>
+			</div>
 
-        <div class="container text-center mt-4 small">
-            <a href="#">Mentions légales</a> – 
-            <a href="#">Politique de confidentialité</a> – 
-            <a href="#">Utilisation des cookies</a>
-        </div>
-    </footer>
+
+			<div style="flex: 1;">
+				<div class="d-flex flex-column align-items-center">
+					<h5 class="mb-3">Suivez-nous sur les réseaux sociaux :</h5>
+					<div class="d-flex gap-3">
+						<a href="#"><img src="images/logo/facebook.png" alt="Facebook" width="32"></a>
+						<a href="#"><img src="images/logo/youtube.png" alt="YouTube" width="32"></a>
+						<a href="#"><img src="images/logo/instagram.png" alt="Instagram" width="32"></a>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+
+		<div class="container text-center mt-4 small">
+			<a href="#">Mentions légales</a>
+			–
+			<a href="#">Politique de confidentialité</a>
+			–
+			<a href="#">Utilisation des cookies</a>
+		</div>
+	</footer>
 {% endblock %}
 
 {% block stylesheets %}
-    {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('style.css') }}">
+	{{ parent() }}
+	<link rel="stylesheet" href="{{ asset('style.css') }}">
 {% endblock %}
