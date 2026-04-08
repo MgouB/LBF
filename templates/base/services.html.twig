@@ -3,252 +3,84 @@
 
 {% block body %}
 
-{# Introduction avec une légère délimitation #}
-<section class="services-intro py-5 mt-4 border-bottom bg-light bg-opacity-10">
-    <div class="container py-lg-5">
-        <div class="row">
-            <div class="col-lg-12">
-                {# Ligne décorative discrète #}
-                <div class="mb-4 bg-success opacity-50" style="height: 2px; width: 40px;"></div>
-                
-                <h1 class="display-3 fw-bold mb-4" style="color: var(--dark-forest); letter-spacing: -2px;">
-                    Nos Services
-                </h1>
-                
-                <div class="row">
-                    <div class="col-md-6">
-                        <p class="lead text-muted fs-4 mb-0" style="line-height: 1.6;">
-                            Une approche <span class="text-success fw-bold">précise</span> et respectueuse de l'environnement pour vos projets paysagers.
-                        </p>
-                    </div>
-                    <div class="col-md-5 offset-md-1 d-flex align-items-center">
-                        <p class="small text-secondary mb-0 border-start ps-4">
-                            De l'entretien courant aux interventions techniques en hauteur, LBF Paysage garantit un résultat soigné et durable.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-{# 1. Tes photos d'origine #}
-{% set images_ev = ['ev1.jpg', 'ev4.jpg', 'ev2.jpg', 'ev3.jpg'] %}
-
-<section id="espace-vert" class="service-section container reveal mb-5 pb-5">
-    {# flex-row (image à gauche) pour alterner avec l'élagage #}
-    <div class="row align-items-center g-5">
-        
-        <div class="col-lg-7">
-            {# carousel-fade est la clé pour mixer vertical/horizontal proprement #}
-            <div id="carouselEV" class="carousel slide carousel-fade service-carousel shadow-lg" data-bs-ride="carousel">
-                
-                <div class="carousel-indicators">
-                    {% for image in images_ev %}
-                        <button type="button" 
-                                data-bs-target="#carouselEV" 
-                                data-bs-slide-to="{{ loop.index0 }}" 
-                                class="{{ loop.first ? 'active' : '' }}">
-                        </button>
-                    {% endfor %}
-                </div>
-
-                <div class="carousel-inner">
-                    {% for image in images_ev %}
-                        <div class="carousel-item {{ loop.first ? 'active' : '' }}" data-bs-interval="5000">
-                            <img src="{{ asset('images/services/espaceVert/' ~ image) }}" 
-                                 class="d-block w-100 service-img-render" 
-                                 alt="Espace Vert LBF Paysage - {{ loop.index }}">
-                        </div>
-                    {% endfor %}
-                </div>
-                
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselEV" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselEV" data-bs-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </button>
-            </div>
-        </div>
-
-        <div class="col-lg-5">
-            <div class="ps-lg-4">
-                <h6 class="text-success fw-bold text-uppercase mb-2">Entretien & Création</h6>
-                <h2 class="fw-bold mb-4">Espace Vert</h2>
-                <p class="text-muted mb-5">Entretien complet de vos espaces verts : nous redonnons vie à vos pelouses, taillons vos haies avec précision et sublimons vos massifs.</p>
-                
-                <div class="d-flex flex-column gap-4">
-                    {# Card Sombre #}
-                    <div class="service-card service-card-dark">
-                        <h4 class="h5 fw-bold mb-3"><i class="bi bi-scissors me-2"></i>Tonte & Bordures</h4>
-                        <ul class="list-unstyled mb-0 opacity-75 small">
-                            <li><i class="bi bi-check2 me-2"></i>Tonte régulière et finitions précises</li>
-                            <li><i class="bi bi-check2 me-2"></i>Évacuation complète des déchets verts</li>
-                        </ul>
-                    </div>
-                    
-                    {# Card Claire #}
-                    <div class="service-card service-card-light">
-                        <h4 class="h5 fw-bold mb-3 text-success"><i class="bi bi-flower1 me-2"></i>Plantations & Massifs</h4>
-                        <ul class="list-unstyled mb-0 text-muted small">
-                            <li><i class="bi bi-check2 text-success me-2"></i>Entretien de fleurs, arbustes et paillage</li>
-                            <li><i class="bi bi-check2 text-success me-2"></i>Nettoyage saisonnier complet</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="mt-5 text-center text-lg-start">
-                    <a href="{{ path('app_devis') }}" class="btn btn-success btn-lg rounded-pill px-5 fw-bold shadow">
-                        Devis gratuit →
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-{% set images_elagage = ['e2.jpg', 'e1.jpg','e3.jpg', 'e4.jpg', 'e5.jpg', 'e6.jpg'] %}
-
-<section id="elagage" class="service-section container reveal mb-5 pb-5">
-    {# flex-row-reverse inverse l'ordre des colonnes (Image à droite / Texte à gauche) #}
-    <div class="row align-items-center g-5 flex-row-reverse"> 
-        <div class="col-lg-7">
-            <div id="carouselElagage" class="carousel slide service-carousel shadow-lg" data-bs-ride="carousel">
-                
-                <div class="carousel-indicators">
-                    {% for image in images_elagage %}
-                        <button type="button" 
-                                data-bs-target="#carouselElagage" 
-                                data-bs-slide-to="{{ loop.index0 }}" 
-                                class="{{ loop.first ? 'active' : '' }}">
-                        </button>
-                    {% endfor %}
-                </div>
-
-                <div class="carousel-inner">
-                    {% for image in images_elagage %}
-                        <div class="carousel-item {{ loop.first ? 'active' : '' }}" data-bs-interval="5000">
-                            <img src="{{ asset('images/services/elagage/' ~ image) }}" 
-                                 class="d-block w-100" 
-                                 alt="Élagage LBF Paysage - {{ loop.index }}">
-                        </div>
-                    {% endfor %}
-                </div>
-                
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselElagage" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselElagage" data-bs-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </button>
-            </div>
-        </div>
-
-        <div class="col-lg-5">
-            <div class="pe-lg-4"> {# On met le padding à droite ici car le texte est à gauche #}
-                <h6 class="text-success fw-bold text-uppercase mb-2">Soin & Esthétique</h6>
-                <h2 class="fw-bold mb-4">Élagage</h2>
-                <p class="text-muted mb-5">Préserver vos arbres avec des tailles respectueuses et sécurisées pour garantir leur santé et votre sérénité.</p>
-                
-                <div class="d-flex flex-column gap-4">
-                    {# Card Sombre #}
-                    <div class="service-card service-card-dark">
-                        <h4 class="h5 fw-bold mb-3"><i class="bi bi-leaf me-2"></i>Taille douce</h4>
-                        <p class="small opacity-75 mb-3">Respect de la structure naturelle de l’arbre.</p>
-                        <ul class="list-unstyled mb-0 small opacity-75">
-                            <li><i class="bi bi-check2 me-2"></i>Éclaircie de couronne</li>
-                            <li><i class="bi bi-check2 me-2"></i>Équilibrage</li>
-                        </ul>
-                    </div>
-                    
-                    {# Card Claire #}
-                    <div class="service-card service-card-light">
-                        <h4 class="h5 fw-bold mb-3 text-success"><i class="bi bi-lightning-charge me-2"></i>Sécurisation</h4>
-                        <p class="small text-muted mb-3">Travaux proches des habitations et lignes électriques.</p>
-                        <ul class="list-unstyled mb-0 small text-muted">
-                            <li><i class="bi bi-check2 text-success me-2"></i>Démontage par rétention</li>
-                            <li><i class="bi bi-check2 text-success me-2"></i>Évacuation sécurisée</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="mt-5 text-center text-lg-start">
-                    <a href="{{ path('app_devis') }}" class="btn btn-success btn-lg rounded-pill px-5 fw-bold shadow">
-                        Demander un devis
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
+<section class="hero">
+  <h1>Nos Services</h1>
+  <h2>Des prestations adaptées à vos besoins</h2>
+  <div class="buttons">
+    <a href="#espace-vert">Espace vert</a>
+    <a href="#elagage">Élagage</a>
+    <a href="#abattage">Abattage</a>
+  </div>
 </section>
 
 
-{# 1. Définition des images spécifique à cette section #}
-{% set images_du_service = ['a1.jpg', 'a2.jpg', 'a4.jpg', 'a5.jpg', 'a6.jpg'] %}
-
-<section id="abattage" class="service-section container reveal mb-5">
-    <div class="row align-items-center g-5">
-        <div class="col-lg-7">
-            <div id="carouselAbattage" class="carousel slide service-carousel shadow-lg" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    {% for image in images_du_service %}
-                        <button type="button" 
-                                data-bs-target="#carouselAbattage" 
-                                data-bs-slide-to="{{ loop.index0 }}" 
-                                class="{{ loop.first ? 'active' : '' }}">
-                        </button>
-                    {% endfor %}
-                </div>
-                <div class="carousel-inner">
-                    {% for image in images_du_service %}
-                        <div class="carousel-item {{ loop.first ? 'active' : '' }}" data-bs-interval="5000">
-                            <img src="{{ asset('images/services/abattage/' ~ image) }}" 
-                                 class="d-block w-100" 
-                                 alt="Service LBF - {{ loop.index }}">
-                        </div>
-                    {% endfor %}
-                </div>
-                
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselAbattage" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselAbattage" data-bs-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </button>
-            </div>
-        </div>
-
-        <div class="col-lg-5">
-            <div class="ps-lg-4">
-                <h6 class="text-success fw-bold text-uppercase mb-2">Sécurité & Expertise</h6>
-                <h2 class="fw-bold mb-4">Abattage</h2>
-                <p class="text-muted mb-5">Un abattage maîtrisé et sécurisé, réalisé par des professionnels équipés.</p>
-                <div class="d-flex flex-column gap-4">
-                    <div class="service-card service-card-dark">
-                        <h4 class="h5 fw-bold mb-3"><i class="bi bi-shield-check me-2"></i>Abattage dirigé</h4>
-                        <ul class="list-unstyled mb-0 opacity-75">
-                            <li><i class="bi bi-dash me-2"></i>Analyse de trajectoire</li>
-                            <li><i class="bi bi-dash me-2"></i>Sécurisation</li>
-                        </ul>
-                    </div>
-                    <div class="service-card service-card-light">
-                        <h4 class="h5 fw-bold mb-3 text-success"><i class="bi bi-tools me-2"></i>Dessouchage</h4>
-                        <ul class="list-unstyled mb-0 text-muted">
-                            <li><i class="bi bi-dash me-2"></i>Suppression complète</li>
-                            <li><i class="bi bi-dash me-2"></i>Remise en état</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="mt-5 text-center text-lg-start">
-                    <a href="{{ path('app_devis') }}" class="btn btn-success btn-lg rounded-pill px-5 fw-bold shadow">
-                        Demander un devis
-                    </a>
-                </div>
-            </div>
-        </div>
+<section id="espace-vert" class="section-why text-center">
+  <h2 class="mb-4">Espace Vert</h2>
+  <p class="mb-5">Entretien complet de vos espaces verts : pelouses, haies, massifs…</p>
+  <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+    <div class="card-why">
+      <h4>Tonte & Bordures</h4>
+      <ul>
+        <li>Tonte régulière</li>
+        <li>Finitions précises</li>
+        <li>Évacuation des déchets verts</li>
+      </ul>
     </div>
+    <div class="card-why light">
+      <h4>Plantations & Massifs</h4>
+      <ul>
+        <li>Fleurs & arbustes</li>
+        <li>Paillage décoratif</li>
+        <li>Entretien saisonnier</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<section id="elagage" class="section-engagements text-center">
+  <h2 class="mb-4">Élagage</h2>
+  <p class="mb-5">Préserver vos arbres avec des tailles respectueuses et sécurisées.</p>
+  <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+    <div class="card-engagement dark">
+      <h4>Taille douce</h4>
+      <p>Respect de la structure naturelle de l’arbre.</p>
+      <ul>
+        <li>Éclaircie de couronne</li>
+        <li>Équilibrage</li>
+      </ul>
+    </div>
+    <div class="card-engagement light">
+      <h4>Sécurisation</h4>
+      <p>Travaux proches des habitations et lignes électriques.</p>
+      <ul>
+        <li>Démontage par rétention</li>
+        <li>Évacuation sécurisée</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<section id="abattage" class="section-why text-center">
+  <h2 class="mb-4">Abattage</h2>
+  <p class="mb-5">Un abattage maîtrisé et sécurisé, avec remise en état du terrain.</p>
+  <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+    <div class="card-why">
+      <h4>Abattage dirigé</h4>
+      <ul>
+        <li>Analyse de trajectoire</li>
+        <li>Zone sécurisée</li>
+      </ul>
+    </div>
+    <div class="card-why light">
+      <h4>Dessouchage</h4>
+      <ul>
+        <li>Suppression de la souche</li>
+        <li>Préparation du terrain</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
 {% endblock %}
