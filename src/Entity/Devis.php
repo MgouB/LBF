@@ -26,6 +26,9 @@ class Devis
     #[ORM\Column(type: Types::TEXT)]
     private ?string $message = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $service = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -75,6 +78,18 @@ class Devis
     public function setMessage(string $message): static
     {
         $this->message = $message;
+
+        return $this;
+    }
+
+    public function getService(): ?string
+    {
+        return $this->service;
+    }
+
+    public function setService(string $service): static
+    {
+        $this->service = $service;
 
         return $this;
     }

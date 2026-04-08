@@ -1,13 +1,71 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}
-    {{ parent() }} Devis
-{% endblock %}
+{% block title %}Demander un Devis - LBF Paysage{% endblock %}
 
 {% block body %}
-    <section class="container my-5">
-        <h1 class="text-center text-success mb-4">Demandez votre devis gratuit</h1>
-        <p class="text-center mb-5">Chez LBF Paysage, nous vous proposons un devis rapide, professionnel et sans engagement. Remplissez le formulaire ci-dessous :</p>
-         {{form(form)}}
-    </section>
+<div class="container-fluid p-0 overflow-hidden">
+    <div class="row g-0"  class="min-height: 80vh;">
+        
+        {# CÔTÉ GAUCHE : VISUEL IMPACTANT (Visible uniquement sur PC) #}
+        <div class="col-lg-5 d-none d-lg-block position-relative bg-success">
+            <div class="position-absolute h-100 w-100" 
+                 style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('{{ asset('images/elagueur-accueil.jpg') }}') center/cover no-repeat;">
+            </div>
+            
+            <div class="position-relative h-100 d-flex flex-column justify-content-center p-5 text-white">
+                <h2 class="display-4 fw-bold mb-4">LBF <span class="text-light">Paysage</span></h2>
+                <p class="fs-5 opacity-75">Sublimez vos extérieurs avec une expertise certifiée.</p>
+                
+                <div class="mt-5">
+                    <div class="d-flex align-items-center mb-4">
+                        <i class="bi bi-clock-fill fs-4 me-3"></i>
+                        <span>Réponse sous 48h</span>
+                    </div>
+                    <div class="d-flex align-items-center mb-4">
+                        <i class="bi bi-geo-alt-fill fs-4 me-3"></i>
+                        <span>Déplacement gratuit</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-check-circle-fill fs-4 me-3"></i>
+                        <span>Conseils personnalisés</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {# CÔTÉ DROIT : FORMULAIRE ÉPURÉ #}
+        <div class="col-lg-7 bg-white d-flex align-items-center py-5">
+            <div class="container p-4 p-md-5" style="max-width: 650px;">
+                <h1 class="fw-bold mb-2 text-success h2">DEMANDER UN DEVIS</h1>
+                <p class="text-muted mb-5">Décrivez-nous vos besoins, nous vous répondons rapidement.</p>
+
+                {{ form_start(form, {'attr': {'class': 'modern-form'}}) }}
+                    <div class="row g-4">
+                        <div class="col-12">
+                            {{ form_row(form.nom, {'label': 'Votre Nom Complet', 'attr': {'placeholder': 'Ex: Jean Dupont'}}) }}
+                        </div>
+                        <div class="col-md-6">
+                            {{ form_row(form.mail, {'label': 'Email'}) }}
+                        </div>
+                        <div class="col-md-6">
+                            {{ form_row(form.telephone, {'label': 'Téléphone'}) }}
+                        </div>
+                        <div class="col-12">
+                            {{ form_row(form.service, {'label': 'Type de prestation'}) }}
+                        </div>
+                        <div class="col-12">
+                            {{ form_row(form.message, {'label': 'Détaillez votre projet', 'attr': {'rows': 4}}) }}
+                        </div>
+                        <div class="col-12 mt-5">
+                            <button type="submit" class="btn btn-success btn-lg w-100 py-3 fw-bold shadow-lg">
+                                ENVOYER MA DEMANDE
+                            </button>
+                        </div>
+                    </div>
+                {# On désactive le rendu du reste pour éviter le bouton fantôme gris #}
+                {{ form_end(form, {'render_rest': false}) }} 
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

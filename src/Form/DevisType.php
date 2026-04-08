@@ -11,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use App\Entity\Devis;
 
 
 class DevisType extends AbstractType
@@ -23,7 +24,7 @@ class DevisType extends AbstractType
             'required' => true,
             'attr' => ['class' => 'form-control'],
         ])
-        ->add('email', EmailType::class, [
+        ->add('mail', EmailType::class, [
             'label' => 'Email ',
             'required' => true,
             'attr' => ['class' => 'form-control'],
@@ -62,6 +63,8 @@ class DevisType extends AbstractType
 
     public function configureOptions(OptionsResolver $resolver): void
     {
-        $resolver->setDefaults([]);
+        $resolver->setDefaults([
+            'data_class' => Devis::class,
+        ]);
     }
 }

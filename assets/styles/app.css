@@ -1,0 +1,156 @@
+/* --- VARIABLES DE COULEURS --- */
+:root {
+    --primary-green: #5a7f3c;
+    --dark-forest: #3f5126; /* Utilise celle-ci partout au lieu de dark-green */
+    --hover-green: #4a6b32;
+    --sand-beige: #f5eee4;
+    --light-beige: #f4ebdf;
+    --text-dark: #333333;
+    --white: #ffffff;
+}
+
+/* --- BASE & TYPO --- */
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text-dark);
+    background-color: #f9f9f9;
+    margin: 0;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- NAVBAR --- */
+.navbar {
+    padding: 1.2rem 0;
+    background-color: var(--white) !important;
+    transition: all 0.4s ease-in-out;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.navbar-scrolled {
+    padding: 0.6rem 0 !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+}
+
+.navbar-nav {
+    display: flex !important;
+    flex-direction: row !important;
+    list-style: none !important;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    font-weight: 600;
+    color: var(--text-dark) !important;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    padding: 0.5rem 1.2rem !important;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover { color: var(--primary-green) !important; }
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background-color: var(--primary-green);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link.active::after { width: 80%; }
+
+/* --- HERO SECTION --- */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('/public/images/fond-jardin.jpg') no-repeat center center/cover;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    padding: 0 20px;
+}
+
+/* --- CARTES & SERVICES --- */
+.service-card {
+    transition: all 0.3s ease-in-out;
+    border-radius: 2.5rem;
+    padding: 2rem;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12) !important;
+}
+
+.service-card-dark {
+    background-color: var(--dark-forest); /* Corrigé ici */
+    color: white;
+}
+
+.service-card-light {
+    background-color: white;
+    border-left: 6px solid var(--primary-green);
+}
+
+/* --- GALERIE & MODAL LIGHTBOX --- */
+.gallery-item {
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover { transform: scale(1.02); }
+
+/* Styles spécifiques à la Lightbox A Propos (Suppression des bandes noires) */
+#aproposLightbox .modal-content {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+#aproposLightbox .modal-dialog {
+    max-width: fit-content !important;
+    margin: 1.75rem auto;
+}
+
+#aproposLightbox .carousel-item img {
+    max-width: 90vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 1rem; /* Optionnel : un petit arrondi sur l'image de la lightbox */
+}
+
+/* Sécurité Boutons et Index */
+.modal { z-index: 1060 !important; }
+
+.btn-close-white, 
+.carousel-control-prev, 
+.carousel-control-next {
+    z-index: 1100 !important;
+    opacity: 1 !important;
+}
+
+/* Reveal Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.9s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}

@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profil - LBF Paysage{% endblock %}
+
+{% block body %}
+<div class="container py-5">
+    <h1 class="text-center text-primary mb-5 fw-bold display-4">Mon Profil Admin</h1>
+
+    <div class="row">
+        {# Section Informations Personnelles #}
+        <div class="col-md-4">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-primary text-white">Mes Informations</div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong>Nom :</strong> {{ app.user.Nom }} {{ app.user.Prenom }}</li>
+                    <li class="list-group-item"><strong>E-mail :</strong> {{ app.user.email }}</li>
+                    <li class="list-group-item"><strong>Ville :</strong> {{ app.user.ville }} ({{ app.user.codePostal }})</li>
+                </ul>
+                <div class="card-body text-center">
+                    <a href="{{ path('app_edit_password', {'id': app.user.id}) }}" class="btn btn-outline-primary btn-sm">Modifier mot de passe</a>
+                </div>
+            </div>
+        </div>
+
+        {# Section Liste des Devis #}
+        <div class="col-md-8">
+            <h3 class="mb-4"><i class="bi bi-envelope-paper"></i> Devis reçus</h3>
+            <div class="table-responsive shadow-sm rounded">
+                <table class="table table-hover align-middle bg-white">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Client</th>
+                            <th>Service</th>
+                            <th>Contact</th>
+                            <th>Message</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for d in devis %}
+                            <tr>
+                                <td><strong>{{ d.nom }}</strong></td>
+                                <td><span class="badge bg-info text-dark">{{ d.service }}</span></td>
+                                <td>
+                                    <small>{{ d.mail }}<br>{{ d.telephone }}</small>
+                                </td>
+                                <td>{{ d.message|nl2br }}</td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="4" class="text-center py-4 text-muted">Aucun devis reçu pour le moment.</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-5">
+        <a class="btn btn-danger px-5 shadow" href="{{ path('app_logout') }}">Déconnexion</a>
+    </div>
+</div>
+{% endblock %}
